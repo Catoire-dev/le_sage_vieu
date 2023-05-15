@@ -1,0 +1,199 @@
+/* ----------------------------- */
+/* ----------Variable----------- */
+/* ----------------------------- */
+html {
+  --nav-height: 50px;
+  --nav-padding: 0 10px;
+  --box-width: 300px;
+  --box-margin: 10px 0;
+  --box-padding: 10px;
+  --yoda-img-height: 200px;
+  --message-box-width: 380px;
+  --fav-box-width: 320px;
+}
+
+/* ----------------------------- */
+/* ----------Generals----------- */
+/* ----------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: #9cbb80;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  background-color: #b2a399;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: solid 2px;
+}
+
+.btn:active {
+  background-color: #5e403b;
+}
+
+.form-check {
+  width: 100%;
+}
+.form-check .select-message-type-box {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.form-check .btn {
+  width: 100%;
+}
+
+/* ----------------------------- */
+/* -------------Nav------------- */
+/* ----------------------------- */
+header nav {
+  background-color: #5e403b;
+  height: var(--nav-height);
+  padding: var(--nav-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav #title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+header nav #btn-fav {
+  background-color: #5e403b;
+  border: none;
+  margin-right: 5px;
+}
+
+/* ----------------------------- */
+/* ------------Main------------- */
+/* ----------------------------- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--main-margintop);
+}
+main #ask-box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  width: var(--box-width);
+  margin: var(--box-margin);
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+main #ask-box .yoda-img {
+  height: var(--yoda-img-height);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main #message-box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  width: var(--box-width);
+  margin: var(--box-margin);
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  display: none;
+}
+main #message-box div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main #message-box div #btn-fav-add {
+  background: none;
+  border: none;
+}
+main #message-box div #btn-fav-add img {
+  width: 20px;
+  height: 20px;
+}
+main #message-box div #btn-fav-del {
+  display: none;
+  background: none;
+  border: none;
+}
+main #message-box div #btn-fav-del img {
+  width: 20px;
+  height: 20px;
+}
+main #message-box .yoda-img {
+  height: var(--yoda-img-height);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main #add-box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  width: var(--box-width);
+  margin: var(--box-margin);
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  display: none;
+}
+main #add-box .yoda-img {
+  height: var(--yoda-img-height);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main #fav-box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  width: var(--box-width);
+  margin: var(--box-margin);
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  width: var(--fav-box-width);
+  display: none;
+  align-items: flex-start;
+  padding: 20px;
+}
+main #fav-box h2 {
+  font-size: 1rem;
+}
+main #fav-box h3 {
+  font-size: 0.8rem;
+}
+
+/* ----------------------------- */
+/* ------Media querry----------- */
+/* ----------------------------- */
+@media screen and (min-width: 720px) {
+  html {
+    --fav-box-width: 600px;
+    --box-width: 600px;
+    --yoda-img-height: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    --box-width: 800px;
+    --fav-box-width: 800px;
+    --yoda-img-height: 350px;
+  }
+}/*# sourceMappingURL=style.css.map */

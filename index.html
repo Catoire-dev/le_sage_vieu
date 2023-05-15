@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css">
+        <title>Le Sage Vieu</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html" id="title">Le Sage Vieu</a>
+                <div id="nav-right-side">
+                    <button id="btn-fav">Favoris</button>
+                    <button id="btn-listen" class="btn">Apprend moi</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="ask-box">
+                    <h1>Ton choix tu fera. Mon Savoir tu recevra.</h1>
+                <img id="yoda-ask" class="yoda-img" src="assets/yoda-1.png" alt="image of yoda">
+                
+                
+                <form id="form-ask-message" class="form-check">
+                    <div class="select-message-type-box">
+                        <div>
+                            <input type="radio" name="radio" id="check-quote">
+                            <label for="quote">Citation</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" id="check-proverb">
+                            <label for="proverb">Proverbe</label>
+                        </div>
+                    </div>
+                    <button id="btn-speak" class="btn">Parle</button>
+                </form>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+
+            <section id="message-box">
+                <div>
+                    <p id="message">Lorem ipsum dolor sit amet consectetur.</p>
+                    <button id="btn-fav-add"><img src="assets/heart-empty.png" alt="empty black and white heart"></button>
+                    <button id="btn-fav-del"><img src="assets/heart-fill.png" alt="filled red heart"></button>
+                </div>
+                <img id="yoda-speak" class="yoda-img" src="assets/yoda-3.png" alt="image of yoda">
+                <button id="btn-reset" class="btn" >Dis m'en plus !</button>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+
+            <section id="add-box">
+                <h1>Ton savoir, tu me transmetra.</h1>
+                <img id="yoda-listen" class="yoda-img" src="assets/yoda-2.png" alt="image of yoda who listen">
+                
+                
+                <form id="form-add-message" class="form-check">
+                    <textarea name="message-add" id="message-add"></textarea>
+                    <div class="select-message-type-box">
+                        <div>
+                            <input type="radio" name="radio-add" id="check-quote-add">
+                            <label for="quote">Citation</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio-add" id="check-proverb-add">
+                            <label for="proverb">Proverbe</label>
+                        </div>
+                    </div>
+                    <button id="btn-add" class="btn">Transmetre</button>
+                </form>
+            </section>
+
+            <!-- ------------------------------------------------------------- -->
+
+            <section id="fav-box">
+                <h2>T'es préféré, sont ces citations ou proverbes.</h2>
+                <h3>Liste des Citations</h3>
+                <ul id="fav-quote-list" class="fav-list">
+
+                </ul>
+                <h3>Liste des Proverbes</h3>
+                <ul id="fav-proverb-list" class="fav-list">
+
+                </ul>
+                <button id="btn-return" class="btn">Retour</button>
+            </section>
+
+
+
+
+        </main>
+        <script src="src/main.js"></script>
+    </body>
+</html>

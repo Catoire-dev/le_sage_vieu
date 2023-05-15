@@ -1,0 +1,223 @@
+/* ----------------------------- */
+/* ----------Variable----------- */
+/* ----------------------------- */
+html {
+    //size
+    --nav-height: 50px;
+    --nav-padding: 0 10px;
+
+    --box-width: 300px;
+    --box-margin: 10px 0;
+    --box-padding: 10px;
+
+    --yoda-img-height: 200px;
+
+    --message-box-width: 380px;
+    --fav-box-width: 320px;
+}
+// Colors
+$yoda_green: #9cbb80;
+$yoda_brown: #5e403b;
+$yoda_dark_brown: #3f2b27;
+$yoda_grey: #b2a399;
+
+//skin
+$m_box-shadow: 0 0 10px black;
+$box-radius: 10px;
+
+/* ----------------------------- */
+/* ----------Generals----------- */
+/* ----------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: $yoda_green;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    background-color: $yoda_grey;
+
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: solid 2px;
+}
+
+.btn:active {
+    background-color: $yoda_brown;
+}
+
+.form-check {
+    width: 100%;
+
+    .select-message-type-box {
+        margin-bottom: 5px;
+
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn {
+        width: 100%;
+    } 
+}
+
+@mixin main-section-layout() {
+    border-radius: $box-radius;
+    box-shadow: $m_box-shadow;
+
+    width: var(--box-width);
+    margin: var(--box-margin);
+    padding: var(--box-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+@mixin yoda-img() {
+    height: var(--yoda-img-height);
+    object-fit: contain;
+}
+
+/* ----------------------------- */
+/* -------------Nav------------- */
+/* ----------------------------- */
+header {
+    nav {
+        background-color: $yoda_brown;
+
+        height: var(--nav-height);
+        padding: var(--nav-padding);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #title {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        #btn-fav {
+            background-color: #5e403b;
+            border: none;
+
+            margin-right: 5px;
+        }
+    }
+}
+
+
+/* ----------------------------- */
+/* ------------Main------------- */
+/* ----------------------------- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: var(--main-margintop);
+
+    #ask-box {
+        @include main-section-layout();
+        
+        .yoda-img {
+            @include yoda-img();
+        }
+    }
+
+    #message-box {
+        @include main-section-layout();
+        display: none;
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            #btn-fav-add {
+                background: none;
+                border: none;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            #btn-fav-del {
+                display: none;
+                background: none;
+                border: none;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .yoda-img {
+            @include yoda-img();
+        }
+    }
+    
+    #add-box {
+        @include main-section-layout();
+        display: none;
+
+        .yoda-img {
+            @include yoda-img();
+        }
+    }
+    
+    #fav-box {
+        @include main-section-layout();
+        width: var(--fav-box-width);
+
+        display: none;
+        align-items: flex-start;
+
+        padding: 20px;
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+/* ----------------------------- */
+/* ------Media querry----------- */
+/* ----------------------------- */
+
+@media screen and (min-width: 720px) {
+    html {
+        --fav-box-width: 600px;
+        --box-width: 600px;
+        
+        --yoda-img-height: 300px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        --box-width: 800px;
+        --fav-box-width: 800px;
+
+        --yoda-img-height: 350px;
+    }
+}
