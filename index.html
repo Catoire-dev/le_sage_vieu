@@ -17,7 +17,7 @@
                 </div>
             </nav>
         </header>
-
+        <!-- Good usage of the semantic tags ! -->
         <main>
             <section id="ask-box">
                     <h1>Ton choix tu fera. Mon Savoir tu recevra.</h1>
@@ -27,11 +27,14 @@
                 <form id="form-ask-message" class="form-check">
                     <div class="select-message-type-box">
                         <div>
+                            <!-- Be careful, the for attribute of the label should refer to the value of the input id.
+                                 so here <label for="check-quote">Citation</label>. It is important for accessibility -->
                             <input type="radio" name="radio" id="check-quote">
                             <label for="quote">Citation</label>
                         </div>
                         <div>
                             <input type="radio" name="radio" id="check-proverb">
+                            <!-- Same here, the for has to take the input id value -->
                             <label for="proverb">Proverbe</label>
                         </div>
                     </div>

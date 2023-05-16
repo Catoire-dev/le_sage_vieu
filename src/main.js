@@ -9,6 +9,7 @@ const data = [
 	{id: 7, type: "proverb", message: "Avec du temps et de la patience, on vient à bout de tout."}
 ];
 
+// variables names are well chosen but I assure you camel case is usually used in js / ts
 const btn_fav = document.getElementById("btn-fav");
 const btn_fav_del = document.getElementById("btn-fav-del");
 const btn_fav_add = document.getElementById("btn-fav-add");
@@ -22,6 +23,7 @@ const fav_box = document.getElementById("fav-box");
 const ask_box = document.getElementById("ask-box");
 const message_box = document.getElementById("message-box");
 const add_box = document.getElementById("add-box");
+// yoda_message does not give any information about the technical use
 const yoda_message = document.getElementById("message");
 
 const form_ask = document.getElementById("form-ask-message");
@@ -34,6 +36,7 @@ const check_proverb = document.getElementById("check-proverb");
 const fav_quote_list = document.getElementById("fav-quote-list");
 const fav_proverb_list = document.getElementById("fav-proverb-list");
 
+// You won't reassign those variables so use const
 let current_message =  {type: "Sentence", message : "Hm." };
 let fav_tab = [];
 
@@ -41,18 +44,21 @@ let fav_tab = [];
 //---------------Utils function-------------
 const get_random_message = (type) => {
 	const filtered = data.filter(elem => is_ok(elem.type, type));
+	// remove console.log before delivering the code
 	console.log(filtered.length);
 	return (filtered[Math.floor(Math.random() * filtered.length)].message);
 }
 
 const push_new_message = (message, type) => {
 	if (type === "quote" || type === "proverb") {
+		// id could also be assigned with : Math.max(...data.map( d => d.id)) + 1;
 		data.push({id: data.length+1, type: type, message: message});
 	} else {
 		console.log("Incorrect type.");
 	}
 }
 
+// const is_ok = (elem, message) => elem === message;
 const is_ok = (elem, message) => {
 	return elem === message;
 }
@@ -62,6 +68,7 @@ const set_fav = () => {
 	const proverb_list = fav_tab.filter(elem => is_ok(elem.type, "proverb"));
 
 	quote_list.forEach(elem => {
+		// use const
 		let node = document.createElement("li");
 		node.textContent = elem.message;
 		fav_quote_list.appendChild(node);
@@ -113,6 +120,7 @@ btn_speak.addEventListener("click", (e) => {
 	} else {
 		alert("Un choix au moins, tu doit realiser.");
 	}
+	// maybe fav_tab.find(elem => is_ok(elem.message, current_message.message)) != null is more solid
 	if (fav_tab.find(elem => is_ok(elem.message, current_message.message))) {
 		btn_fav_add.style.display = "none";
 		btn_fav_del.style.display = "inline";	
@@ -158,6 +166,7 @@ btn_add.addEventListener("click", (e) => {
 				add_box.style.display = "none";
 				message_box.style.display = "flex";
 			}
+			// Useless I think
 			else
 				console.log("Error btn_add");
 		} else {
@@ -181,10 +190,12 @@ btn_fav.addEventListener("click", e => {
 
 //Add to fav
 btn_fav_add.addEventListener("click", e => {
+	// Keep the id, you have to respect the given structure
 	fav_tab.push({"type": current_message.type, "message": current_message.message});
 	localStorage.setItem("favorite", JSON.stringify(fav_tab));
 
 	if (current_message.type === "proverb") {
+		// use const
 		let node = document.createElement("li");
 		node.textContent = current_message.message;
 		fav_proverb_list.appendChild(node);
@@ -205,6 +216,7 @@ btn_fav_del.addEventListener("click", e => {
 	localStorage.setItem("favorite", JSON.stringify(fav_tab));
 
 	if (current_message.type === "proverb") {
+		// use const
 		let node = find_node(fav_proverb_list, current_message.message);
 		fav_proverb_list.removeChild(node);
 	} else {
