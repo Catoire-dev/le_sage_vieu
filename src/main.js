@@ -9,6 +9,7 @@ const data = [
 	{id: 7, type: "proverb", message: "Avec du temps et de la patience, on vient à bout de tout."}
 ];
 
+// variables names are well chosen but I assure you camel case is usually used in js / ts
 const btn_fav = document.getElementById("btn-fav");
 const btn_fav_del = document.getElementById("btn-fav-del");
 const btn_fav_add = document.getElementById("btn-fav-add");
@@ -22,6 +23,7 @@ const fav_box = document.getElementById("fav-box");
 const ask_box = document.getElementById("ask-box");
 const message_box = document.getElementById("message-box");
 const add_box = document.getElementById("add-box");
+// yoda_message does not give any information about the technical use
 const yoda_message = document.getElementById("message");
 
 const form_ask = document.getElementById("form-ask-message");
@@ -34,6 +36,7 @@ const check_proverb = document.getElementById("check-proverb");
 const fav_quote_list = document.getElementById("fav-quote-list");
 const fav_proverb_list = document.getElementById("fav-proverb-list");
 
+// You won't reassign those variables so use const
 let current_message =  {type: "Sentence", message : "Hm." };
 let fav_tab = [];
 
@@ -41,6 +44,7 @@ let fav_tab = [];
 //---------------Utils function-------------
 const get_random_message = (type) => {
 	const filtered = data.filter(elem => is_ok(elem.type, type));
+	// remove console.log before delivering the code
 	console.log(filtered.length);
 	return (filtered[Math.floor(Math.random() * filtered.length)].message);
 }
